@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*NAV*/
+.navbar{
+    padding: 10px;
+    display: flex;
+    gap: 300px;
+    background: black;
+}
+
+.navbar img{
+    margin-left: 40px ;
+    width: 80px; 
+    height: 40px;
+}
+
+.search input{
+    width: 197px;
+    height: 29px;
+    margin-top: 10px;
+    text-indent: 5px;
+}
+
+.search button{
+    width: 100px;
+    height: 29px;
+    border-radius: 3px;
+}
+
+.nav-list ul{
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list ul li{
+    list-style: none;
+    font-size: 20px;
+    margin-top: 10px;
+
+}
+
+.nav-list ul li a{
+    text-decoration: none;
+}
