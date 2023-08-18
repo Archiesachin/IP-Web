@@ -1,0 +1,102 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Longest Word Finder</title>
+</head>
+<body>
+    <input type="text" id="inputSentence" placeholder="Enter a sentence">
+    <button onclick="findLongestWord()">Find Longest Word</button>
+    <p id="result"></p>
+
+    <script>
+        function findLongestWord() {
+            const inputElement = document.getElementById("inputSentence");
+            const sentence = inputElement.value;
+            
+            let longestWord = "";
+            let currentWord = "";
+            
+            for (let i = 0; i < sentence.length; i++) {
+                const char = sentence[i];
+                
+                if (char !== " " && char !== "." && char !== "," && char !== "!" && char !== "?") {
+                    currentWord += char;
+                } else {
+                    if (currentWord.length > longestWord.length) {
+                        longestWord = currentWord;
+                    }
+                    currentWord = "";
+                }
+            }
+            
+            if (currentWord.length > longestWord.length) {
+                longestWord = currentWord;
+            }
+            
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Longest word: ${longestWord}`;
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Longest Word Finder</title>
+</head>
+<body>
+  <label for="sentence">Enter a sentence:</label>
+  <input type="text" id="sentence" />
+  <button onclick="findLongestWord()">Find Longest Word(s)</button>
+  <p id="result"></p>
+
+  <script>
+    function findLongestWord() {
+      const sentenceInput = document.getElementById("sentence");
+      const resultElement = document.getElementById("result");
+      const sentence = sentenceInput.value.trim();
+
+      if (sentence === "") {
+        resultElement.textContent = "Please enter a sentence.";
+        return;
+      }
+
+      let longestWords = [];
+      let currentWord = "";
+      let maxLength = 0;
+
+      for (let i = 0; i < sentence.length; i++) {
+        const char = sentence[i];
+
+        if (char !== " ") {
+          currentWord += char;
+        } else {
+          if (currentWord.length > maxLength) {
+            maxLength = currentWord.length;
+            longestWords = [currentWord];
+          } else if (currentWord.length === maxLength) {
+            longestWords.push(currentWord);
+          }
+
+          currentWord = "";
+        }
+      }
+
+      if (currentWord.length > maxLength) {
+        longestWords = [currentWord];
+      } else if (currentWord.length === maxLength) {
+        longestWords.push(currentWord);
+      }
+
+      if (longestWords.length === 1) {
+        resultElement.textContent = `Longest word: ${longestWords[0]}`;
+      } else {
+        resultElement.textContent = `Longest words: ${longestWords.join(", ")}`;
+      }
+    }
+  </script>
+</body>
+</html>
+

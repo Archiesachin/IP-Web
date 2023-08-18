@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Practice</h1>
+    </div>
+    <div class="radio-box">
+        <input class="btn" type="radio" name="colour" onclick="changeColor('WHITE')" style="accent-color: white;"><label>WHITE</label>
+        <input  class="btn" type="radio" name="colour" onclick="changeColor('LIGHTPINK') " style="accent-color: pink;"><label>PINK</label>
+        <input class="btn" type="radio" name="colour" onclick="changeColor('LIGHTGREEN')" style="accent-color: green;"><label>GREEN</label>
+        <input class="btn" type="radio" name="colour" onclick="changeColor('LIGHTBLUE')" style="accent-color: blue"><label>BLUE</label>
+    </div>
+
+
+<script>
+    function changeColor(color){
+        document.body.style.backgroundColor = color;
+
+    }
+</script>  
+</body>
+</html>
